@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Rotate</title>
+    <style>
+        #RODA{ position: absolute; }
+    </style>
+<script src="jquery-3.4.1.min.js"></script>
+<script>
+    var grau = 0;
+    function Girar()
+    {
+        grau = grau + 45; // ÂNGULO DESEJADO
+        $('#RODA').animate(
+        { deg: grau },
+        {
+            duration: 500,
+            step: function(now) {
+            $(this).css({ transform: 'rotate(' + now + 'deg)' });
+            }
+        }
+        );
+    }
+</script>
+</head>
+<body>
+    
+      <img src="roda.png" id="RODA" width="256px" onclick="Girar();">
+    
+</body>
+</html>
